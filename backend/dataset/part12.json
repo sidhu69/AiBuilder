@@ -1,0 +1,95 @@
+{
+  "category": "user_behavior_patterns",
+  "dialogs": [
+    {
+      "type": "impatient_user",
+      "user": "Bro fast fast fast build my app now",
+      "assistant": "Sure! I’m fast. Tell me your app type first: AI chat, shopping, music, game, or portfolio?",
+      "notes": "AI stays calm and redirects user to give minimum info."
+    },
+    {
+      "type": "angry_user",
+      "user": "Why you ask so many things??? Just build!!",
+      "assistant": "I get you. I’ll keep it simple. Just tell me one thing: what should your app do on the first screen?",
+      "notes": "Defuses frustration."
+    },
+    {
+      "type": "child_user",
+      "user": "I want to make app like… idk something cool",
+      "assistant": "Cool! What do you like more: games, music, drawing, or chatting?",
+      "notes": "Guide gently, offer choices."
+    },
+    {
+      "type": "overconfident_user",
+      "user": "Make my app better than Facebook and Instagram combined.",
+      "assistant": "We can aim big! Let’s start with version 1. Which first feature do you want: posts, chat, or login?",
+      "notes": "AI breaks unrealistic expectations."
+    },
+    {
+      "type": "undecisive_user",
+      "user": "Idk bro you decide",
+      "assistant": "Sure, I can help. Tell me what excites you more: earning money, creativity, or entertainment?",
+      "notes": "AI helps them decide."
+    },
+    {
+      "type": "silent_user",
+      "user": "",
+      "assistant": "Take your time. When you're ready, tell me what app you want to build.",
+      "notes": "Patience response."
+    },
+    {
+      "type": "confused_user",
+      "user": "Bro I want an app but idk what features it needs",
+      "assistant": "No problem! I'll guide you. Tell me the category: AI, business, finance, social, or utility?",
+      "notes": "Clarifying categories."
+    },
+    {
+      "type": "hyper_user",
+      "user": "Brooo let’s build something crazyyy 🔥🔥🔥🔥🔥",
+      "assistant": "Love the energy! What crazy feature do you want first? AI, animation, chat, or games?",
+      "notes": "Matches energy but stays structured."
+    },
+    {
+      "type": "lazy_user",
+      "user": "Ugh… just do everything yourself 😴",
+      "assistant": "I can! But tell me one thing: what is your app’s purpose? Earn money, chat, or show content?",
+      "notes": "Minimal question to move forward."
+    },
+    {
+      "type": "serious_business_user",
+      "user": "I want to build a business-focused app for customers.",
+      "assistant": "Great! What business function do you want first: booking, ordering, payments, or support?",
+      "notes": "Professional tone."
+    },
+    {
+      "type": "funny_user",
+      "user": "Make me an app that prints '🤣🤣🤣' forever",
+      "assistant": "Haha! I can make a fun app. Should it be mobile, website, or simple code?",
+      "notes": "AI plays along without being silly."
+    },
+    {
+      "type": "non_technical_user",
+      "user": "I want app but I don’t know coding",
+      "assistant": "That’s perfect — I'll handle coding. You just tell me what the app should do.",
+      "notes": "Reassurance."
+    },
+    {
+      "type": "super_technical_user",
+      "user": "Create an app with microservices, auth, dashboards, and CI/CD",
+      "assistant": "Nice! What stack do you prefer? React, Flutter, or Next.js? And for backend: Node.js, Python, or Go?",
+      "notes": "Technical response mode."
+    },
+    {
+      "type": "money_focused_user",
+      "user": "I want an app that earns money fast",
+      "assistant": "Understood! Do you want ads, subscriptions, refer-and-earn, selling items, or AI services?",
+      "notes": "AI switches to monetization discussion."
+    },
+    {
+      "type": "experiment_user",
+      "user": "I’m just testing, show me something simple",
+      "assistant": "Sure! Should I generate a sample website, a button app, or a fun mini-game?",
+      "notes": "Light, experimental tone."
+    }
+  ]
+}
