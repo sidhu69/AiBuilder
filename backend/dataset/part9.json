@@ -1,0 +1,92 @@
+{
+  "mobile_app_blueprints": {
+    "rules": {
+      "1": "Always ask the user what type of app they want: business, social, chat, ecommerce, booking, custom.",
+      "2": "If the user does not specify, assume this is a simple 3-screen app.",
+      "3": "The AI must always generate complete folder structure with all core screens.",
+      "4": "Always return files in JSON format matching the backend code generation system.",
+      "5": "Code must be clean, production-ready, and runnable with no missing imports.",
+      "6": "Navigation must always be included.",
+      "7": "Use React Native by default unless user chooses Flutter.",
+      "8": "Never include demo APIs; always create placeholder API URLs.",
+      "9": "Apps must always be responsive and optimized for Android first."
+    },
+
+    "folder_structure": {
+      "react_native": {
+        "required": [
+          "App.js",
+          "package.json",
+          "app.json",
+          "babel.config.js",
+          "src/navigation/AppNavigator.js",
+          "src/screens/HomeScreen.js",
+          "src/screens/LoginScreen.js",
+          "src/screens/ProfileScreen.js",
+          "src/components/CustomButton.js",
+          "src/theme/colors.js"
+        ]
+      },
+      "flutter": {
+        "required": [
+          "pubspec.yaml",
+          "lib/main.dart",
+          "lib/screens/home.dart",
+          "lib/screens/login.dart",
+          "lib/screens/profile.dart",
+          "lib/widgets/button.dart",
+          "lib/theme/colors.dart"
+        ]
+      }
+    },
+
+    "templates": {
+      "basic_3_screen_app": {
+        "description": "A simple app with Login → Home → Profile",
+        "screens": ["Login", "Home", "Profile"],
+        "navigation": "stack"
+      },
+      "chat_app": {
+        "description": "Real-time chat style app",
+        "screens": ["Splash", "Login", "ChatList", "ChatRoom", "Profile"],
+        "navigation": "stack + tabs",
+        "components": ["ChatBubble", "MessageInput"]
+      },
+      "ecommerce_app": {
+        "description": "Shopping app with products",
+        "screens": ["Home", "ProductList", "ProductDetails", "Cart", "Profile"],
+        "navigation": "stack"
+      },
+      "booking_app": {
+        "description": "Hotel / salon / appointment booking",
+        "screens": ["Home", "Category", "ItemDetails", "Book", "Profile"],
+        "navigation": "stack"
+      },
+      "social_media_app": {
+        "description": "Feed-based app like Instagram",
+        "screens": ["Feed", "Search", "Reels", "Notifications", "Profile"],
+        "navigation": "tabs"
+      }
+    },
+
+    "react_native_base_code": {
+      "App.js": "// Root App File\nimport React from 'react';\nimport AppNavigator from './src/navigation/AppNavigator';\nexport default function App() { return <AppNavigator />; }",
+
+      "src/navigation/AppNavigator.js": "import React from 'react';\nimport { NavigationContainer } from '@react-navigation/native';\nimport { createStackNavigator } from '@react-navigation/stack';\nimport HomeScreen from '../screens/HomeScreen';\nimport LoginScreen from '../screens/LoginScreen';\nimport ProfileScreen from '../screens/ProfileScreen';\nconst Stack = createStackNavigator();\nexport default function AppNavigator() {\n  return (\n    <NavigationContainer>\n      <Stack.Navigator screenOptions={{ headerShown: false }}>\n        <Stack.Screen name='Login' component={LoginScreen} />\n        <Stack.Screen name='Home' component={HomeScreen} />\n        <Stack.Screen name='Profile' component={ProfileScreen} />\n      </Stack.Navigator>\n    </NavigationContainer>\n  );\n}",
+
+      "src/components/CustomButton.js": "import React from 'react';\nimport { TouchableOpacity, Text, StyleSheet } from 'react-native';\nexport default function CustomButton({ title, onPress }) {\n  return (\n    <TouchableOpacity style={styles.btn} onPress={onPress}>\n      <Text style={styles.txt}>{title}</Text>\n    </TouchableOpacity>\n  );\n}\nconst styles = StyleSheet.create({ btn:{backgroundColor:'#007bff',padding:14,borderRadius:8,alignItems:'center'}, txt:{color:'#fff',fontSize:16,fontWeight:'bold'} });"
+    },
+
+    "flutter_base_code": {
+      "main.dart": "import 'package:flutter/material.dart';\nimport 'screens/login.dart';\nvoid main() { runApp(MyApp()); }\nclass MyApp extends StatelessWidget {\n  @override\n  Widget build(BuildContext context) {\n    return MaterialApp(debugShowCheckedModeBanner:false, home: LoginScreen());\n  }\n}"
+    },
+
+    "output_rules": {
+      "1": "Always return final output as a JSON object of files.",
+      "2": "Each file must contain complete runnable code.",
+      "3": "Never describe the code.",
+      "4": "Never break the folder structure.",
+      "5": "If the user gives only an idea (ex: ‘make a gym app’), the AI must choose correct template."
+    }
+  }
+}
