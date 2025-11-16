@@ -1,0 +1,103 @@
+{
+  "website_blueprints": {
+    "rules": {
+      "1": "Always generate clean and minimal HTML.",
+      "2": "Use responsive design by default.",
+      "3": "Avoid inline CSS unless necessary.",
+      "4": "Always create a folder structure: /index.html, /style.css, /src/app.js, /assets/",
+      "5": "Code must always be valid, complete, and runnable.",
+      "6": "Always add comments in code for readability.",
+      "7": "Never leave placeholders like TODO or SAMPLE."
+    },
+
+    "structure": {
+      "required_files": {
+        "index.html": "Main HTML entry file",
+        "style.css": "Global CSS styles",
+        "src/app.js": "Frontend JS logic",
+        "assets/": "Images and media"
+      }
+    },
+
+    "common_sections": {
+      "hero": {
+        "html": "<section class='hero'><h1>{{title}}</h1><p>{{subtitle}}</p><button>{{button}}</button></section>",
+        "css": ".hero{padding:60px;text-align:center;background:#f0f0f0;margin-bottom:40px;}"
+      },
+      "features": {
+        "html": "<section class='features'><div class='feature'>{{feature1}}</div><div class='feature'>{{feature2}}</div><div class='feature'>{{feature3}}</div></section>",
+        "css": ".features{display:flex;gap:20px;padding:40px;}.feature{flex:1;background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 5px rgba(0,0,0,0.1);}"
+      },
+      "footer": {
+        "html": "<footer><p>© {{year}} {{name}}</p></footer>",
+        "css": "footer{text-align:center;padding:20px;background:#222;color:#fff;margin-top:40px;}"
+      }
+    },
+
+    "templates": {
+      "landing_page": {
+        "description": "For SaaS, startup ideas, services",
+        "sections": ["hero", "features", "footer"],
+        "variables": {
+          "title": "Build Anything Instantly",
+          "subtitle": "AI-powered website builder.",
+          "button": "Get Started",
+          "feature1": "Fast development",
+          "feature2": "AI-generated code",
+          "feature3": "Deploy instantly",
+          "name": "YourSite"
+        }
+      },
+
+      "portfolio": {
+        "description": "Personal portfolio for creators",
+        "sections": ["hero", "features", "footer"],
+        "variables": {
+          "title": "Hi, I’m {{user_name}}",
+          "subtitle": "App Developer | Designer | Creator",
+          "button": "View My Work",
+          "feature1": "Projects",
+          "feature2": "Skills",
+          "feature3": "Contact",
+          "name": "{{user_name}}"
+        }
+      },
+
+      "ecommerce": {
+        "description": "Online store template",
+        "sections": ["hero", "features", "footer"],
+        "variables": {
+          "title": "Shop the Latest Trends",
+          "subtitle": "Quality products at best prices.",
+          "button": "Shop Now",
+          "feature1": "Fast delivery",
+          "feature2": "Secure payments",
+          "feature3": "Top quality",
+          "name": "MyStore"
+        }
+      },
+
+      "blog": {
+        "description": "Blog website",
+        "sections": ["hero", "features", "footer"],
+        "variables": {
+          "title": "Welcome to My Blog",
+          "subtitle": "Read amazing articles.",
+          "button": "Latest Posts",
+          "feature1": "Tech",
+          "feature2": "Design",
+          "feature3": "Lifestyle",
+          "name": "MyBlog"
+        }
+      }
+    },
+
+    "output_rules": {
+      "1": "Always produce full JSON of files.",
+      "2": "Never produce explanation outside JSON.",
+      "3": "If user does not specify website type, choose landing_page by default.",
+      "4": "All CSS must be modern, responsive, and clean.",
+      "5": "Always ensure the final website works offline without external libraries."
+    }
+  }
+}
