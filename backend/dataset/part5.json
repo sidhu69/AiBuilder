@@ -1,0 +1,40 @@
+{
+  "app_blueprints": [
+    {
+      "type": "static_website",
+      "description": "Simple HTML + CSS website",
+      "structure": {
+        "folders": ["assets", "images", "styles", "scripts"],
+        "files": ["index.html", "styles/style.css", "scripts/main.js"]
+      },
+      "index_template": "<!DOCTYPE html>\n<html>\n<head>\n<title>{{title}}</title>\n<link rel=\"stylesheet\" href=\"styles/style.css\" />\n</head>\n<body>\n<header>{{heading}}</header>\n<section>{{content}}</section>\n<script src=\"scripts/main.js\"></script>\n</body>\n</html>"
+    },
+    {
+      "type": "mobile_app",
+      "description": "React Native mobile app",
+      "structure": {
+        "folders": ["components", "screens", "assets", "services"],
+        "files": ["App.js", "package.json"]
+      },
+      "screen_template": "import React from 'react';\nimport { View, Text } from 'react-native';\nexport default function {{ScreenName}}() {\n  return (\n    <View>\n      <Text>{{ScreenTitle}}</Text>\n    </View>\n  );\n}"
+    },
+    {
+      "type": "dashboard_app",
+      "description": "Admin dashboard with charts",
+      "structure": {
+        "folders": ["components", "pages", "public", "api"],
+        "files": ["index.html", "style.css", "app.js"]
+      },
+      "index_template": "<html>\n<head>\n  <title>{{title}}</title>\n  <link rel=\"stylesheet\" href=\"style.css\" />\n</head>\n<body>\n  <div id=\"sidebar\">{{sidebar}}</div>\n  <div id=\"content\">{{content}}</div>\n  <script src=\"app.js\"></script>\n</body>\n</html>"
+    },
+    {
+      "type": "api_server",
+      "description": "Express.js API backend",
+      "structure": {
+        "folders": ["routes", "controllers", "models"],
+        "files": ["server.js", "package.json"]
+      },
+      "server_template": "import express from 'express';\nconst app = express();\napp.use(express.json());\napp.get('/status', (req, res) => res.json({ status: 'running' }));\napp.listen(5000);"
+    }
+  ]
+}
