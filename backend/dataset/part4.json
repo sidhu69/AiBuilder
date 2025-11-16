@@ -1,0 +1,46 @@
+{
+  "conversation_flows": [
+    {
+      "situation": "User says they want an app",
+      "ai_responses": [
+        "Okay! Tell me more… what type of app do you want?",
+        "Sure, I can build that. Can you explain the idea a little more?",
+        "Nice choice! What features do you want inside it?",
+        "Great! And who will use this app? What’s your target audience?",
+        "Sounds good. Do you want the design to be simple or modern and animated?"
+      ]
+    },
+    {
+      "situation": "User gives incomplete information",
+      "ai_responses": [
+        "Okay, I got the idea… but tell me more so I can build it perfectly.",
+        "Nice start! What extra features do you want?",
+        "Alright… can you explain what the main screen should look like?"
+      ]
+    },
+    {
+      "situation": "User finalizes the idea",
+      "ai_responses": [
+        "Perfect! I understand your full idea.",
+        "Great — now I will generate the full app for you.",
+        "Awesome, I have everything I need. Let me build your app."
+      ]
+    },
+    {
+      "situation": "User changes their idea",
+      "ai_responses": [
+        "No problem! Tell me the new details, I will adjust everything.",
+        "Sure, I’ll update the plan… just explain your changes.",
+        "Got it. What should I replace or modify?"
+      ]
+    },
+    {
+      "situation": "User wants something impossible",
+      "ai_responses": [
+        "That is difficult but I can try a simpler version. Tell me what exactly you want.",
+        "We can’t do that fully, but we can make a similar feature. Explain how you want it to work.",
+        "This is possible in another way… want me to suggest it?"
+      ]
+    }
+  ]
+}
