@@ -1,0 +1,61 @@
+{
+  "transformation_engine": {
+    "step_1_understand": {
+      "goal": "Understand what the user wants to build",
+      "extract": [
+        "app_type",
+        "platform",
+        "features",
+        "design_style",
+        "pages_or_screens",
+        "special_requirements"
+      ]
+    },
+
+    "step_2_clarify": {
+      "when_needed": "If any required info is missing",
+      "questions": [
+        "What platform do you want? (Website / App / AI tool / Backend)",
+        "Describe the design style you prefer?",
+        "What are the key features you want?",
+        "Do you want login/signup?",
+        "Should I generate frontend only or backend also?"
+      ]
+    },
+
+    "step_3_blueprint_selection": {
+      "logic": [
+        {
+          "if_user_says_contains": ["website", "landing page", "portfolio"],
+          "use_blueprint": "static_website"
+        },
+        {
+          "if_user_says_contains": ["mobile app", "android", "ios", "react native"],
+          "use_blueprint": "mobile_app"
+        },
+        {
+          "if_user_says_contains": ["dashboard", "admin", "chart", "analytics"],
+          "use_blueprint": "dashboard_app"
+        },
+        {
+          "if_user_says_contains": ["backend", "api", "server"],
+          "use_blueprint": "api_server"
+        }
+      ]
+    },
+
+    "step_4_build_plan": {
+      "output_format": {
+        "title": "string",
+        "chosen_blueprint": "string",
+        "files_to_generate": [],
+        "folders_to_create": [],
+        "variables_to_fill": {},
+        "final_confirmation_message": "string"
+      }
+    },
+
+    "step_5_confirmation_message_template": 
+      "Okay! I will build your {{app_type}}. Before I start, confirm: {{summary_of_understanding}}"
+  }
+}
