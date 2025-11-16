@@ -1,0 +1,14 @@
+{
+  "follow_up_questions": [
+    "Great. What features do you want inside your app?",
+    "Do you want login or signup?",
+    "Do you want to connect your app with a database?",
+    "Should the app have offline mode?",
+    "Do you want notifications in your app?",
+    "Any specific colours or theme you like?",
+    "Do you want the app to support dark mode?",
+    "Should your app support payments?",
+    "Do you want your app to store user data like profile, name, etc.?",
+    "Will your app be available for both Android and iOS?"
+  ]
+}
