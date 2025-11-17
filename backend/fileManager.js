@@ -1,5 +1,7 @@
+// backend/fileManager.js
 import fs from "fs";
 import path from "path";
+import archiver from "archiver";
 
 export function createProjectFiles(jsonOutput, projectId) {
   const baseDir = path.join(process.cwd(), "projects");
@@ -11,47 +13,46 @@ export function createProjectFiles(jsonOutput, projectId) {
 
   // Create unique project folder
   const projectPath = path.join(baseDir, projectId);
-  fs.mkdirSync(projectPath);
-
-  let parsed;
-  try {
-    parsed = JSON.parse(jsonOutput);
-  } catch (error) {
-    console.error("❌ JSON Parsing Error:", error);
-    fs.writeFileSync(path.join(projectPath, "error_output.txt"), jsonOutput);
-    return projectPath;
+  
+  // If project exists, we're updating it
+  if (!fs.existsSync(projectPath)) {
+    fs.mkdirSync(projectPath);
   }
 
-  // Loop through all JSON keys
-  Object.entries(parsed).forEach(([filePath, content]) => {
+  // Loop through all JSON keys and create files
+  Object.entries(jsonOutput).forEach(([filePath, content]) => {
     const fullPath = path.join(projectPath, filePath);
     const dir = path.dirname(fullPath);
 
-    // Create folder(s)
+    // Create folder(s) if needed
     fs.mkdirSync(dir, { recursive: true });
 
     // Write the file
     fs.writeFileSync(fullPath, content);
+    console.log(`✅ Created: ${filePath}`);
   });
 
   return projectPath;
 }
-import archiver from "archiver";
 
 export function zipProject(projectPath, projectId) {
   return new Promise((resolve, reject) => {
     const zipDir = path.join(process.cwd(), "zips");
 
-    // create /zips folder if missing
+    // Create /zips folder if missing
     if (!fs.existsSync(zipDir)) {
       fs.mkdirSync(zipDir);
     }
 
     const zipPath = path.join(zipDir, `${projectId}.zip`);
     const output = fs.createWriteStream(zipPath);
-    const archive = archiver("zip");
+    const archive = archiver("zip", { zlib: { level: 9 } });
 
-    output.on("close", () => resolve(zipPath));
+    output.on("close", () => {
+      console.log(`📦 ZIP created: ${archive.pointer()} bytes`);
+      resolve(zipPath);
+    });
+
     archive.on("error", (err) => reject(err));
 
     archive.pipe(output);
