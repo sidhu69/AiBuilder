@@ -26,7 +26,7 @@ const DATASET = loadDataset();
 // Initialize Gemini
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 const model = genAI.getGenerativeModel({
-  model: "gemini-pro"
+  model: "gemini-2.5-flash"
 });
 
 // Store conversation history (in production, use Redis/Database)
